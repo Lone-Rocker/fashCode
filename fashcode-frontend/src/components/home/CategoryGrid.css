@@ -1,0 +1,124 @@
+.categories {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+
+.categories__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.categories__title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.categories__title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.categories__subtitle {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.category-card {
+  position: relative;
+  background: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.category-card__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.category-card:hover .category-card__icon {
+  transform: scale(1.1);
+}
+
+.category-card__name {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.category-card__count {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.category-card__hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.category-card:hover .category-card__hover {
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  .categories {
+    padding: 40px 0;
+  }
+  
+  .categories__title {
+    font-size: 1.8rem;
+  }
+  
+  .categories__grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .category-card {
+    padding: 30px 15px;
+  }
+  
+  .category-card__icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
